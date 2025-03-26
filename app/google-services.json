@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "918584082443",
+    "project_id": "desafio-practicoii-dsm",
+    "storage_bucket": "desafio-practicoii-dsm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918584082443:android:1977f25a584650fe12c70e",
+        "android_client_info": {
+          "package_name": "com.example.desafio_practicoii"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsx8fUF0Q4vAGcdCY9zej9GXdR73JavRw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

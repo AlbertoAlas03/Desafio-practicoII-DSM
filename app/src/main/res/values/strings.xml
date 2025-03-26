@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Colegio Don Bosco</string>
+    <string name="login">¿Ya tienes cuenta?</string>
+    <string name="btnLogin">Iniciar sesión</string>
+    <string name="register">Registrarse</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="auth">Autenticar</string>
+    <string name="create">¿No tienes cuenta?</string>
+    <string name="txtRegister">Regístrate</string>
+    <string name="name">Colegio Don Bosco</string>
+    <string name="sing_out">Cerrar sesión</string>
+</resources>
