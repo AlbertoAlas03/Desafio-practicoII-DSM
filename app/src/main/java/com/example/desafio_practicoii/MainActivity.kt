@@ -4,6 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -13,18 +16,24 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var btnAgregar: Button
+    private lateinit var btnListar: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.toolbar)) //show de navbar
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        btnAgregar.setOnClickListener {
+            val intent = Intent(this, AgregarEstudianteActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        btnListar.setOnClickListener {
+            val intent = Intent(this, ListaEstudiantesActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true

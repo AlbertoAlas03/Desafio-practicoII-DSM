@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".AgregarEstudianteActivity">
+
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/agregarNombre"
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/txtApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/agregarApellido"
+        android:inputType="textPersonName"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/agregarGrado"
+        android:textStyle="bold"
+        android:paddingTop="8dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerGrados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/agregarMateria"
+        android:textStyle="bold"
+        android:paddingTop="8dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerMaterias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+    <EditText
+        android:id="@+id/txtNota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/agregarNota"
+        android:inputType="numberDecimal"/>
+
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/agregarGuardar"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

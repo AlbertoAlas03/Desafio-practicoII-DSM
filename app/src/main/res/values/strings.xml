@@ -10,4 +10,12 @@
     <string name="txtRegister">Regístrate</string>
     <string name="name">Colegio Don Bosco</string>
     <string name="sing_out">Cerrar sesión</string>
+    <string name="agregarNombre">Nombre</string>
+    <string name="agregarApellido">Apellido</string>
+    <string name="agregarNota">Nota</string>
+    <string name="agregarGrado">Grado</string>
+    <string name="agregarMateria">Materia</string>
+    <string name="agregarGuardar">Agregar Estudiante</string>
+    <string name="mainAgregar">Agregar estudiante</string>
+    <string name="mainListar">Lista de estudiantes</string>
 </resources>
