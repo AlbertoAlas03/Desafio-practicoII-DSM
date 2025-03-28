@@ -18,4 +18,8 @@
     <string name="agregarGuardar">Agregar Estudiante</string>
     <string name="mainAgregar">Agregar estudiante</string>
     <string name="mainListar">Lista de estudiantes</string>
+    <string name="itemNombre">Nombre: </string>
+    <string name="itemNota">Nota: </string>
+    <string name="itemGrado">Grado: </string>
+    <string name="itemMateria">Materia: </string>
 </resources>

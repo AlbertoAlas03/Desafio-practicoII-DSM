@@ -26,12 +26,12 @@ class MainActivity : AppCompatActivity() {
         btnAgregar.setOnClickListener {
             val intent = Intent(this, AgregarEstudianteActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
         btnListar.setOnClickListener {
             val intent = Intent(this, ListaEstudiantesActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -52,7 +52,7 @@ R.id.sing_out -> {
 
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
     }.setNegativeButton("Cancelar", null).show()
 }
