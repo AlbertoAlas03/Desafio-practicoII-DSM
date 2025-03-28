@@ -33,4 +33,5 @@
     <string name="filtrar">Filtrar </string>
     <string name="agregarEstudiante">Agregar Estudiante </string>
     <string name="editarEstudiante">Editar Estudiante </string>
+    <string name="Acciones">Tus acciones:</string>
 </resources>

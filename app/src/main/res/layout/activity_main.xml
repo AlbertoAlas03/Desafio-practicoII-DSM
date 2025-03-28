@@ -15,6 +15,28 @@
         android:background="#CFD8DC"
         tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtNombre"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Acciones"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        />
+
     <Button
         android:id="@+id/btnAgregarEstudiantes"
         android:layout_width="match_parent"
