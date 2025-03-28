@@ -14,4 +14,6 @@ Integrantes:
 🥳 COLEGIO DON BOSCO 🥳
 
 
-![launch](https://github.com/user-attachments/assets/6b4b828d-49d1-4bf3-941a-537941707cde)
+![ic_launcher](https://github.com/user-attachments/assets/2a905231-b083-4f50-abc4-cfd304658f65)
+
+
