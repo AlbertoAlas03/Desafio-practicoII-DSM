@@ -8,7 +8,33 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".EditarEstudianteActivity">
-
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/editarEstudiante"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        android:layout_gravity="center"/>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/editar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtEditarNombre"
+        android:layout_gravity="center"/>
     <EditText
         android:id="@+id/txtEditarNombre"
         android:layout_width="match_parent"
@@ -60,6 +86,7 @@
         android:layout_height="wrap_content"
         android:text="@string/editarGuardar"
         android:textColor="@android:color/white"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#607D8B"/>
 
 </LinearLayout>

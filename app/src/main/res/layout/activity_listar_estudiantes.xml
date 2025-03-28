@@ -19,7 +19,8 @@
         android:id="@+id/btnFiltrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Filtrar" />
+        android:text="@string/filtrar"
+        android:backgroundTint="#455A64"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEstudiantes"

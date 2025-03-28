@@ -30,4 +30,7 @@
     <string name="itemMateria">Materia: </string>
     <string name="itemEliminar">Eliminar </string>
     <string name="itemEditar">Editar </string>
+    <string name="filtrar">Filtrar </string>
+    <string name="agregarEstudiante">Agregar Estudiante </string>
+    <string name="editarEstudiante">Editar Estudiante </string>
 </resources>

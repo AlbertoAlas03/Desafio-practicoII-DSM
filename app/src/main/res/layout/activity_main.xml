@@ -12,7 +12,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/lightblue"
+        android:background="#CFD8DC"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -22,7 +22,8 @@
         android:text="@string/mainAgregar"
         android:textColor="@android:color/white"
         android:layout_marginTop="16dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:backgroundTint="#607D8B"/>
     <Button
         android:id="@+id/btnListarEstudiantes"
         android:layout_width="match_parent"
@@ -30,6 +31,7 @@
         android:text="@string/mainListar"
         android:textColor="@android:color/white"
         android:layout_marginTop="16dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:backgroundTint="#607D8B"/>
 
 </LinearLayout>
