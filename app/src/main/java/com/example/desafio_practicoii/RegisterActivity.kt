@@ -37,7 +37,7 @@ class RegisterActivity : AppCompatActivity() {
         authStateListener = FirebaseAuth.AuthStateListener { auth ->
             if (auth.currentUser != null) {
                 startActivity(Intent(this, MainActivity::class.java))
-
+                finish()
             }
         }
 
@@ -84,6 +84,7 @@ Toast.makeText(this,"La contraseña debe tener al menos 6 caracteres", Toast.LEN
     private fun goToLogin(){
 val intent = Intent(this, LoginActivity::class.java)
     startActivity(intent)
+    finish()
     }
 
     override fun onResume(){

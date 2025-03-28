@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".EditarEstudianteActivity">
+
+    <EditText
+        android:id="@+id/txtEditarNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/editarNombre"
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/txtEditarApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/editarApellido"
+        android:inputType="textPersonName"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/editarGrado"
+        android:textStyle="bold"
+        android:paddingTop="8dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerEditarGrados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/editarMateria"
+        android:textStyle="bold"
+        android:paddingTop="8dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerEditarMaterias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/txtEditarNota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/agregarNota"
+        android:inputType="numberDecimal"/>
+
+    <Button
+        android:id="@+id/btnEditarGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/editarGuardar"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

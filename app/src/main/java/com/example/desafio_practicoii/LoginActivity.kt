@@ -61,6 +61,7 @@ auth.signInWithEmailAndPassword(email, password).addOnCompleteListener{ task ->
         Toast.makeText(this, "Bienvenido!", Toast.LENGTH_LONG).show()
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        finish()
     }else{
         Toast.makeText(this, "Error en el inicio de sesión, verifique las credenciales ingresadas", Toast.LENGTH_LONG).show()
     }
@@ -73,5 +74,6 @@ auth.signInWithEmailAndPassword(email, password).addOnCompleteListener{ task ->
     private fun goToRegister(){
 val intent = Intent(this, RegisterActivity::class.java)
     startActivity(intent)
+        finish()
     }
 }

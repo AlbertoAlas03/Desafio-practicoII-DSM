@@ -16,10 +16,18 @@
     <string name="agregarGrado">Grado</string>
     <string name="agregarMateria">Materia</string>
     <string name="agregarGuardar">Agregar Estudiante</string>
+    <string name="editarNombre">Nombre</string>
+    <string name="editarApellido">Apellido</string>
+    <string name="editarNota">Nota</string>
+    <string name="editarGrado">Grado</string>
+    <string name="editarMateria">Materia</string>
+    <string name="editarGuardar">Editar Estudiante</string>
     <string name="mainAgregar">Agregar estudiante</string>
     <string name="mainListar">Lista de estudiantes</string>
     <string name="itemNombre">Nombre: </string>
     <string name="itemNota">Nota: </string>
     <string name="itemGrado">Grado: </string>
     <string name="itemMateria">Materia: </string>
+    <string name="itemEliminar">Eliminar </string>
+    <string name="itemEditar">Editar </string>
 </resources>

@@ -81,7 +81,7 @@ class AgregarEstudianteActivity : AppCompatActivity() {
                 limpiarCampos()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-
+                finish()
             }.addOnFailureListener{
                 Toast.makeText(this,"Error al guardar",Toast.LENGTH_SHORT).show()
             }
@@ -116,6 +116,7 @@ class AgregarEstudianteActivity : AppCompatActivity() {
 
                         val intent = Intent(this, LoginActivity::class.java)
                         startActivity(intent)
+                        finish()
 
                     }
                 }.setNegativeButton("Cancelar", null).show()

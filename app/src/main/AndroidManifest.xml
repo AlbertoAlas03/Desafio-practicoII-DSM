@@ -13,6 +13,9 @@
         android:theme="@style/Theme.DesafiopracticoII"
         tools:targetApi="31">
         <activity
+            android:name=".EditarEstudianteActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListaEstudiantesActivity"
             android:exported="false" />
         <activity

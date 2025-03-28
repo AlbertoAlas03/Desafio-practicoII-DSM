@@ -17,9 +17,11 @@ import android.widget.*
 
 class ListaEstudiantesActivity : AppCompatActivity() {
 
-    private lateinit var listView: ListView
-    private lateinit var adapter: ArrayAdapter<String>
     private lateinit var estudiantesList: MutableList<Estudiante>
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var estudianteAdapter: EstudianteAdapter
+
     private lateinit var spinnerFiltro: Spinner
     private lateinit var spinnerValores: Spinner
     private lateinit var btnFiltrar: Button
@@ -30,14 +32,20 @@ class ListaEstudiantesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listar_estudiantes)
 
-        listView = findViewById(R.id.listViewEstudiantes)
+
+        recyclerView = findViewById(R.id.recyclerViewEstudiantes)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+
+        estudiantesList = mutableListOf()
+
+       estudianteAdapter = EstudianteAdapter(this, estudiantesList, dbRef)
+        recyclerView.adapter = estudianteAdapter
+
         spinnerFiltro = findViewById(R.id.spinnerFiltro)
         spinnerValores = findViewById(R.id.spinnerValores)
         btnFiltrar = findViewById(R.id.btnFiltrar)
 
-        estudiantesList = mutableListOf()
-        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, mutableListOf())
-        listView.adapter = adapter
 
         val opcionesFiltro = listOf("Todos", "Materia", "Grado")
         val filtroAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, opcionesFiltro)
@@ -90,15 +98,16 @@ class ListaEstudiantesActivity : AppCompatActivity() {
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 estudiantesList.clear()
-                adapter.clear()
 
                 for (estudianteSnapshot in snapshot.children) {
                     val estudiante = estudianteSnapshot.getValue(Estudiante::class.java)
                     estudiante?.let {
+                        estudiante.key = estudianteSnapshot.key
                         estudiantesList.add(it)
-                        adapter.add("${it.nombre} ${it.apellido} - ${it.materia} - ${it.grado} - Nota: ${it.nota}")
                     }
                 }
+
+                estudianteAdapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -106,6 +115,7 @@ class ListaEstudiantesActivity : AppCompatActivity() {
             }
         })
     }
+
 
     private fun filtrarEstudiantes(campo: String, valor: String) {
         val filtro = when (campo) {
@@ -117,15 +127,15 @@ class ListaEstudiantesActivity : AppCompatActivity() {
         dbRef.orderByChild(filtro).equalTo(valor).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 estudiantesList.clear()
-                adapter.clear()
 
                 for (estudianteSnapshot in snapshot.children) {
                     val estudiante = estudianteSnapshot.getValue(Estudiante::class.java)
                     estudiante?.let {
                         estudiantesList.add(it)
-                        adapter.add("${it.nombre} ${it.apellido} - ${it.materia} - ${it.grado} - Nota: ${it.nota}")
                     }
                 }
+
+                estudianteAdapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -133,6 +143,7 @@ class ListaEstudiantesActivity : AppCompatActivity() {
             }
         })
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
