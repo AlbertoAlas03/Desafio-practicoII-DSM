@@ -46,6 +46,16 @@ class AgregarEstudianteActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        } else {
+            return super.onBackPressed()
+        }
+    }
+
     private fun configurarSpinners() {
         val materias = listOf("Matemáticas", "Ciencias", "Historia", "Inglés", "Sociales")
         val grados = listOf("1°", "2°", "3°", "4°", "5°", "6°", "7°", "8°", "9°")

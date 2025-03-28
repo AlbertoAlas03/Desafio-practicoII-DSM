@@ -75,6 +75,16 @@ class ListaEstudiantesActivity : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        return super.onBackPressed()
+    }
+
+
     private fun cargarOpcionesDeFiltro(opcion: String) {
         if (opcion == "Todos") {
             spinnerValores.isEnabled = false

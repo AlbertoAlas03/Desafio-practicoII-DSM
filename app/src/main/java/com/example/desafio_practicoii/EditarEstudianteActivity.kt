@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.desafio_practicoii.estudiante.Estudiante
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -56,6 +57,16 @@ class EditarEstudianteActivity : AppCompatActivity() {
             actualizarEstudiante()
         }
     }
+
+    override fun onBackPressed() {
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            val intent = Intent(this, ListaEstudiantesActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        return super.onBackPressed()
+    }
+
 
     private fun configurarSpinners() {
         val materias = listOf("Matemáticas", "Ciencias", "Historia", "Inglés", "Sociales")

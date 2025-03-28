@@ -53,6 +53,16 @@ class RegisterActivity : AppCompatActivity() {
             insets
         }
     }
+
+    override fun onBackPressed() {
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        return super.onBackPressed()
+    }
+
 //function for register
         private fun register(email:String, password: String){
             //validations

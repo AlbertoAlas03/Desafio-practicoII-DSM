@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        setSupportActionBar(findViewById(R.id.toolbar)) //show de navbar
 
         btnAgregar = findViewById(R.id.btnAgregarEstudiantes)
         btnListar = findViewById(R.id.btnListarEstudiantes)
@@ -38,6 +39,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    override fun onBackPressed() {
+        if (FirebaseAuth.getInstance().currentUser != null) {
+        val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+            return super.onBackPressed()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
