@@ -75,7 +75,7 @@ class AgregarEstudianteActivity : AppCompatActivity() {
                 ).show()
                 return
             }
-            val estudiante = Estudiante(nombre,apellido,materia,grado,nota.toString())
+            val estudiante = Estudiante(nombre,apellido,grado,materia,nota.toString())
             db.child(newKey).setValue(estudiante).addOnSuccessListener{
                 Toast.makeText(this,"Se guardo con exito",Toast.LENGTH_SHORT).show()
                 limpiarCampos()

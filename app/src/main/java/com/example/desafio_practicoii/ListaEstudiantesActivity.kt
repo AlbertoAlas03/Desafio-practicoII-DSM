@@ -54,27 +54,37 @@ class ListaEstudiantesActivity : AppCompatActivity() {
         cargarTodosLosEstudiantes()
         btnFiltrar.setOnClickListener {
             val opcionSeleccionada = spinnerFiltro.selectedItem.toString()
-            val valorSeleccionado = spinnerValores.selectedItem.toString()
 
             if (opcionSeleccionada == "Todos") {
                 cargarTodosLosEstudiantes()
-            } else {
+            } else if (spinnerValores.selectedItem != null) {
+                val valorSeleccionado = spinnerValores.selectedItem.toString()
                 filtrarEstudiantes(opcionSeleccionada, valorSeleccionado)
+            } else {
+                Toast.makeText(this, "Selecciona un valor para filtrar", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 
     private fun cargarOpcionesDeFiltro(opcion: String) {
-        val valores = when (opcion) {
-            "Materia" -> listOf("Matemáticas", "Ciencias", "Historia", "Inglés", "Sociales")
-            "Grado" -> listOf("1°", "2°", "3°", "4°", "5°", "6°", "7°", "8°", "9°")
-            else -> emptyList()
-        }
+        if (opcion == "Todos") {
+            spinnerValores.isEnabled = false
+            spinnerValores.adapter = null
+        } else {
+            spinnerValores.isEnabled = true
+            val valores = when (opcion) {
+                "Materia" -> listOf("Matemáticas", "Ciencias", "Historia", "Inglés", "Sociales")
+                "Grado" -> listOf("1°", "2°", "3°", "4°", "5°", "6°", "7°", "8°", "9°")
+                else -> emptyList()
+            }
 
-        val adapterValores = ArrayAdapter(this, android.R.layout.simple_spinner_item, valores)
-        adapterValores.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerValores.adapter = adapterValores
+            val adapterValores = ArrayAdapter(this, android.R.layout.simple_spinner_item, valores)
+            adapterValores.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinnerValores.adapter = adapterValores
+        }
     }
+
 
     private fun cargarTodosLosEstudiantes() {
         dbRef.addValueEventListener(object : ValueEventListener {

@@ -23,17 +23,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        btnAgregar = findViewById(R.id.btnAgregarEstudiantes)
+        btnListar = findViewById(R.id.btnListarEstudiantes)
+
         btnAgregar.setOnClickListener {
             val intent = Intent(this, AgregarEstudianteActivity::class.java)
             startActivity(intent)
-
         }
+
         btnListar.setOnClickListener {
             val intent = Intent(this, ListaEstudiantesActivity::class.java)
             startActivity(intent)
-
         }
     }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
